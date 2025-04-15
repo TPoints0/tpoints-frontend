@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>TPoints Admin Panel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Admin Panel</h1>
+  <div id="admin-container">
+    <p>Hier kannst du alle Benutzerkonten und Kontostände sehen:</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Benutzername</th>
+          <th>TPoints</th>
+        </tr>
+      </thead>
+      <tbody id="user-table-body">
+        <!-- Benutzer werden hier eingefügt -->
+      </tbody>
+    </table>
+    <button onclick="goBack()">Zurück zur Hauptseite</button>
+  </div>
+
+  <script>
+    async function loadUsers() {
+      const res = await fetch("https://tpoints-backend.<dein-username>.repl.co/admin/users");
+      const data = await res.json();
+      const tableBody = document.getElementById("user-table-body");
+
+      data.users.forEach(user => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+          <td>${user.username}</td>
+          <td>${user.tpoints}</td>
+        `;
+        tableBody.appendChild(row);
+      });
+    }
+
+    function goBack() {
+      window.location.href = "main.html";
+    }
+
+    loadUsers();
+  </script>
+</body>
+</html>

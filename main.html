@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TPoints Konto</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Willkommen, <span id="userDisplay"></span>!</h1>
+  
+  <div class="konto">
+    <h2>Kontostand: <span id="balance">0</span> TPoints</h2>
+    <button onclick="requestDeposit()">Einzahlen</button>
+    <p id="depositMsg"></p>
+  </div>
+
+  <hr>
+
+  <div class="shop">
+    <h2>Shop</h2>
+    <div id="shopItems"></div>
+  </div>
+
+  <hr>
+
+  <div class="gluecksrad">
+    <h2>🎉 Glücksrad</h2>
+    <button onclick="spin()">Drehen</button>
+    <p id="spinResult"></p>
+  </div>
+
+  <br>
+  <a href="admin.html" id="adminLink" style="display:none;">🔐 Admin-Panel</a>
+
+  <script src="script.js"></script>
+</body>
+</html>
