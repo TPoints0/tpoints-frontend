@@ -1,4 +1,4 @@
-const api = "https://tpoints-backend.timoernst.repl.co"; // DEIN BACKEND-LINK HIER einsetzen
+const api = "https://tpoints-backend-1.hunkepunke21.repl.co"; // DEIN BACKEND-LINK HIER einsetzen
 
 // Lokale Benutzerdaten
 let user = localStorage.getItem("user");
